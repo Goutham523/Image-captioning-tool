@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Captioning Tool</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mb-5">Image Captioning Tool</h1>
+    <form method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="image">Choose an image:</label>
+        <input type="file" class="form-control-file" id="image" name="file">
+      </div>
+      <div class="form-group">
+        <label for="num_captions">Number of captions to generate:</label>
+        <select class="form-control" id="num_captions" name="num_captions">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          
+        </select>
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary">Generate Caption</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
