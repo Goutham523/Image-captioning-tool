@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Captioning Results</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mb-5">Image Captioning Result :</h1>
+    {% if captions %}
+      <div class="row">
+        {% for caption in captions %}
+          <div class="col-md-{{ 12//num_captions }}">
+            <div class="card mb-4">
+              
+              
+              <div class="card-body">
+                <p class="card-text">{{ caption }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>Number of captions : {{ num_captions}}</p>
+    {% endif %}
+    <div class="text-center">
+      <a href="{{ url_for('index') }}" class="btn btn-primary">Generate More Captions</a>
+    </div>
+  </div>
+</body>
+</html>
